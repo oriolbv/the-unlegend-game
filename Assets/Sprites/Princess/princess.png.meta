@@ -11,8 +11,20 @@ TextureImporter:
   - first:
       213: -3397445869433751594
     second: princess_rear
+  - first:
+      213: -4046196983227860204
+    second: princess_0
+  - first:
+      213: 8414791756858671060
+    second: princess_1
+  - first:
+      213: -4422587852079285412
+    second: princess_2
+  - first:
+      213: 2573032968431924957
+    second: princess_3
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -66,7 +78,6 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -96,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: princess_front
+      name: princess_0
       rect:
         serializedVersion: 2
         x: 6
@@ -110,17 +121,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ea53a5f782db0ac0800000000000000
-      internalID: -3887782371920749848
+      spriteID: 41b327b084509d7c0800000000000000
+      internalID: -4046196983227860204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princess_left
+      name: princess_1
       rect:
         serializedVersion: 2
-        x: 38
+        x: 28
         y: 5
         width: 15
         height: 23
@@ -131,14 +142,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a98a71289c2c36380800000000000000
-      internalID: -8979119061319833446
+      spriteID: 4df3276f48857c470800000000000000
+      internalID: 8414791756858671060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princess_rear
+      name: princess_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 5
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b3bd8c7cfcf92c0800000000000000
+      internalID: -4422587852079285412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_3
       rect:
         serializedVersion: 2
         x: 70
@@ -152,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d778c07bf8d9d0d0800000000000000
-      internalID: -3397445869433751594
+      spriteID: dd6f0ce2adf35b320800000000000000
+      internalID: 2573032968431924957
       vertices: []
       indices: 
       edges: []
