@@ -31,6 +31,12 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("last_horizontal_movement", movement.x);
             animator.SetFloat("last_vertical_movement", movement.y);
         }
+
+        if (Input.GetButton("Jump"))
+        {
+            animator.SetTrigger("is_attacking");
+        }
+        
     }
 
     void FixedUpdate() 
