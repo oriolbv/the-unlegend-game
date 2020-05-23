@@ -32,11 +32,18 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("last_vertical_movement", movement.y);
         }
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
-            animator.SetTrigger("is_attacking");
+            StartCoroutine(Attack());
         }
         
+    }
+
+    private IEnumerator Attack()
+    {
+        animator.SetBool("is_attacking", true);
+        yield return null;
+        animator.SetBool("is_attacking", false);
     }
 
     void FixedUpdate() 
