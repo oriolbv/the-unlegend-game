@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1102902285265497505}
   - component: {fileID: 7914757359012807234}
   - component: {fileID: 9006141967880705489}
+  - component: {fileID: 6319864757043943101}
   m_Layer: 0
   m_Name: BlueEnemy
   m_TagString: Untagged
@@ -141,3 +142,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &6319864757043943101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102902285265497534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67201985697d2264f927e04a61c2bc7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
