@@ -24,18 +24,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = this.GetComponentInChildren<Rigidbody2D>();
         animator = this.GetComponentInChildren<Animator>();
-
-        // Obtaining the different hit zones
-        frontHitZone = GameObject.Find("FrontHitZone");
-        rearHitZone = GameObject.Find("RearHitZone");
-        leftHitZone = GameObject.Find("LeftHitZone");
-        rightHitZone = GameObject.Find("RightHitZone");
-
-        // Set active flag to false for all hit zones
-        frontHitZone.SetActive(false);
-        rearHitZone.SetActive(false);
-        leftHitZone.SetActive(false);
-        rightHitZone.SetActive(false);
     }
     
     void Update()
@@ -62,12 +50,10 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        frontHitZone.SetActive(true);
         animator.SetBool("is_attacking", true);
         yield return null;
         animator.SetBool("is_attacking", false);
         yield return new WaitForSeconds(.50f);
-        frontHitZone.SetActive(false);
 
     }
 
