@@ -30,6 +30,7 @@ public class FloorButton : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        Debug.Log("GAS EXIT");
         DoorGameObject.SetActive(true);
     }
 }
