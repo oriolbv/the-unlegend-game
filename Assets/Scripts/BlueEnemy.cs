@@ -19,11 +19,11 @@ public class BlueEnemy : MonoBehaviour
     {
         if (moveRight)
         {
-            transform.Translate(2 * Time.deltaTime * speed, 0, 0);
+            // transform.Translate(2 * Time.deltaTime * speed, 0, 0);
         }
         else
         {
-            transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
+            // transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
         }
         
     }

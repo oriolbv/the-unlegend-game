@@ -64333,6 +64333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7914757359012807234, guid: aaf01d5a231395d4fab8fdcec9e71db6,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf01d5a231395d4fab8fdcec9e71db6, type: 3}
 --- !u!4 &678285843 stripped
@@ -81630,6 +81635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988526251}
   - component: {fileID: 1988526252}
+  - component: {fileID: 1988526253}
   m_Layer: 0
   m_Name: RightHitZone
   m_TagString: weapon
@@ -81683,6 +81689,20 @@ PolygonCollider2D:
       - {x: -0.057500422, y: -1.2753019}
       - {x: 0.9352132, y: -0.9735881}
       - {x: 1.106484, y: -0.13898203}
+--- !u!114 &1988526253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988526250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfda3f2c58aa424fb5a2457740e3112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Thrust: 8
+  KnockTime: 0.3
 --- !u!1001 &1102902284262873648
 PrefabInstance:
   m_ObjectHideFlags: 0
