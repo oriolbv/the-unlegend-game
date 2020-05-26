@@ -6,6 +6,7 @@ TagManager:
   tags:
   - weapon
   - box
+  - wall
   layers:
   - Default
   - TransparentFX

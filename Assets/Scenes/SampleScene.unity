@@ -502,8 +502,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548636838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.55, y: -0.192, z: 102.31662}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.55, y: 0.295, z: 102.31662}
+  m_LocalScale: {x: 1, y: 1.487, z: 1}
   m_Children: []
   m_Father: {fileID: 536988632}
   m_RootOrder: 0
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 578581698}
   m_Layer: 0
   m_Name: WallsTilemap
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64333,8 +64333,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueEnemy (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7914757359012807234, guid: aaf01d5a231395d4fab8fdcec9e71db6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf01d5a231395d4fab8fdcec9e71db6, type: 3}
 --- !u!4 &678285843 stripped
 Transform:
@@ -64478,7 +64477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815246897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.03, y: 6.05, z: -0.1}
+  m_LocalPosition: {x: -2.32, y: 6.22, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 285127621}
@@ -64847,8 +64846,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueEnemy (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7914757359012807234, guid: aaf01d5a231395d4fab8fdcec9e71db6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf01d5a231395d4fab8fdcec9e71db6, type: 3}
 --- !u!4 &1186036505 stripped
 Transform:
@@ -81752,8 +81750,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueEnemy
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7914757359012807234, guid: aaf01d5a231395d4fab8fdcec9e71db6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf01d5a231395d4fab8fdcec9e71db6, type: 3}
 --- !u!1001 &4412918367375077368
 PrefabInstance:
