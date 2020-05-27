@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueEnemy : MonoBehaviour
+public class BlueEnemy : MonoBehaviour, IEnemy
 {
     [Header("Movement")]
     private float speed = 2f;
     private bool moveRight = true;
 
+    [Header("Attributes")]
+    private int lives = 1;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,7 +28,21 @@ public class BlueEnemy : MonoBehaviour
         {
             // transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
         }
-        
+
+    }
+
+    public void Hurt()
+    {
+        --lives;
+        if (lives <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+
     }
 
 
@@ -39,9 +56,11 @@ public class BlueEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.CompareTag("weapon"))
+        if (collider.CompareTag("weapon"))
         {
             Debug.Log("AUCH");
         }
     }
+
+
 }

@@ -11,25 +11,26 @@ public class Knockback : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemy")) 
         {
-            Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
-            if(enemy != null) 
+            Rigidbody2D rbEnemy = other.GetComponent<Rigidbody2D>();
+            if(rbEnemy != null) 
             {
-                enemy.isKinematic = false;
-                Vector2 difference = enemy.transform.position - transform.position;
+                rbEnemy.isKinematic = false;
+                Vector2 difference = rbEnemy.transform.position - transform.position;
                 difference = difference.normalized * Thrust;
-                enemy.AddForce(difference, ForceMode2D.Impulse);
-                Debug.Log("Hola1");
-                StartCoroutine(KnockCo(enemy));
+                rbEnemy.AddForce(difference, ForceMode2D.Impulse);
+                StartCoroutine(KnockCo(rbEnemy, other));
             }
         }
     }
 
-    private IEnumerator KnockCo(Rigidbody2D enemy) 
+    private IEnumerator KnockCo(Rigidbody2D rb, Collider2D enemy) 
     {
-        if(enemy != null) {
+        if(rb != null) {
             yield return new WaitForSeconds(KnockTime);
-            enemy.velocity = Vector2.zero;
-            enemy.isKinematic = true;
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
+            // Hurt enemy
+            enemy.GetComponent<BlueEnemy>().Hurt();
         }
     }
 }
