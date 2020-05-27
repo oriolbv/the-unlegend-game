@@ -2,35 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knockback : MonoBehaviour
+public class Knockback : ExtendedBehaviour
 {
     public float Thrust;
     public float KnockTime;
+
+    private bool triggerActive = false;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.CompareTag("enemy")) 
         {
-            Rigidbody2D rbEnemy = other.GetComponent<Rigidbody2D>();
-            if(rbEnemy != null) 
+            if(!triggerActive)
             {
-                rbEnemy.isKinematic = false;
-                Vector2 difference = rbEnemy.transform.position - transform.position;
-                difference = difference.normalized * Thrust;
-                rbEnemy.AddForce(difference, ForceMode2D.Impulse);
-                StartCoroutine(KnockCo(rbEnemy, other));
-            }
-        }
-    }
+                triggerActive = true;
+                Rigidbody2D rbEnemy = other.GetComponent<Rigidbody2D>();
+                if (rbEnemy != null)
+                {
+                    other.GetComponent<BlueEnemy>().IsMoving = false;
+                    Vector2 forceDirection = rbEnemy.transform.position - transform.position;
+                    Vector2 force = forceDirection.normalized * Thrust;
 
-    private IEnumerator KnockCo(Rigidbody2D rb, Collider2D enemy) 
-    {
-        if(rb != null) {
-            yield return new WaitForSeconds(KnockTime);
-            rb.velocity = Vector2.zero;
-            rb.isKinematic = true;
-            // Hurt enemy
-            enemy.GetComponent<BlueEnemy>().Hurt();
+                    rbEnemy.velocity = force;
+                    Wait(0.2f, () => {
+                        rbEnemy.velocity = new Vector2();
+                        other.GetComponent<BlueEnemy>().Hurt();
+                        triggerActive = false;
+                    });
+                }
+            }
         }
     }
 }
