@@ -18,6 +18,7 @@ public class Knockback : MonoBehaviour
                 Vector2 difference = enemy.transform.position - transform.position;
                 difference = difference.normalized * Thrust;
                 enemy.AddForce(difference, ForceMode2D.Impulse);
+                Debug.Log("Hola1");
                 StartCoroutine(KnockCo(enemy));
             }
         }

@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     Vector2 movement;
     public float moveSpeed = 5f;
+    private bool isAttacking = false;
 
     [Header("Hit zones")]
     private GameObject frontHitZone;
@@ -43,9 +44,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            StartCoroutine(Attack());
+            if(!isAttacking)
+            {
+                isAttacking = true;
+                StartCoroutine(Attack());
+            }
         }
-        
     }
 
     private IEnumerator Attack()
@@ -53,7 +57,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("is_attacking", true);
         yield return null;
         animator.SetBool("is_attacking", false);
-        yield return new WaitForSeconds(.50f);
+        yield return new WaitForSeconds(.40f); 
+        isAttacking = false;
 
     }
 
