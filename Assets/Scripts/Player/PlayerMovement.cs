@@ -14,12 +14,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     private bool isAttacking = false;
 
-    [Header("Hit zones")]
-    private GameObject frontHitZone;
-    private GameObject rearHitZone;
-    private GameObject leftHitZone;
-    private GameObject rightHitZone;
-
 
     void Start() 
     {

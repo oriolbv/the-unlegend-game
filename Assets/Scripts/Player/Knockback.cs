@@ -9,9 +9,11 @@ public class Knockback : ExtendedBehaviour
 
     private bool triggerActive = false;
 
+    private bool isBossEnemy = false;
+
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.gameObject.CompareTag("enemy")) 
+        if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("boss")) 
         {
             if(!triggerActive)
             {
@@ -19,14 +21,32 @@ public class Knockback : ExtendedBehaviour
                 Rigidbody2D rbEnemy = other.GetComponent<Rigidbody2D>();
                 if (rbEnemy != null)
                 {
-                    other.GetComponent<BlueEnemy>().IsMoving = false;
+                    if (other.gameObject.CompareTag("boss"))
+                    {
+                        other.GetComponent<BossEnemy>().IsMoving = false;
+                        isBossEnemy = true;
+                    }
+                    else
+                    {
+                        other.GetComponent<BlueEnemy>().IsMoving = false;
+                        isBossEnemy = false;
+                    }
+                    
                     Vector2 forceDirection = rbEnemy.transform.position - transform.position;
                     Vector2 force = forceDirection.normalized * Thrust;
 
                     rbEnemy.velocity = force;
                     Wait(0.2f, () => {
                         rbEnemy.velocity = new Vector2();
-                        other.GetComponent<BlueEnemy>().Hurt();
+                        if (isBossEnemy)
+                        {
+                            other.GetComponent<BossEnemy>().Hurt();
+                        }
+                        else
+                        {
+                            other.GetComponent<BlueEnemy>().Hurt();
+                        }
+                        
                         triggerActive = false;
                     });
                 }

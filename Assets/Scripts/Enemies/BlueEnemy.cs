@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BlueEnemy : MonoBehaviour, IEnemy
 {
-    [Header("Components")]
-    private SpriteRenderer spriteRenderer;
-
     [Header("Movement")]
     private float speed = 2f;
     private bool isMoving = true;
@@ -15,16 +12,10 @@ public class BlueEnemy : MonoBehaviour, IEnemy
     [Header("Attributes")]
     private int lives = 1;
 
-    [Header("Materials")]
-    private Material whiteMaterial;
-    private Material defaultMaterial;
-
     // Start is called before the first frame update
     void Start()
     {
-        //spriteRenderer = GetComponent<SpriteRenderer>();
-        //whiteMaterial = Resources.Load("WhiteMaterial", typeof(Material)) as Material;
-        //defaultMaterial = spriteRenderer.material;
+
     }
 
     // Update is called once per frame
@@ -46,7 +37,6 @@ public class BlueEnemy : MonoBehaviour, IEnemy
     public void Hurt()
     {
         --lives;
-        //spriteRenderer.material = whiteMaterial;
         if (lives <= 0)
         {
             Die();

@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class FloorButton : MonoBehaviour
 {
-
-    public GameObject DoorGameObject;
-
+    private bool isPressed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        isPressed = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.CompareTag("box"))
         {
-            DoorGameObject.SetActive(false);
+            isPressed = true;
         }
     }
 
-    void OnTriggerExit(Collider other)
+    #region Properties
+    public bool IsPressed
     {
-        Debug.Log("GAS EXIT");
-        DoorGameObject.SetActive(true);
+        get
+        {
+            return isPressed;
+        }
+        set
+        {
+            isPressed = value;
+        }
     }
+    #endregion
 }
