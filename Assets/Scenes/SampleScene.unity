@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 548636841}
   - component: {fileID: 548636840}
   - component: {fileID: 548636839}
+  - component: {fileID: 548636842}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -694,6 +695,19 @@ Transform:
   m_Father: {fileID: 1663694417}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &548636842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548636838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515de8b4807c88745ba7b20b354c1647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FloorButtonGameObject: {fileID: 1062422769}
 --- !u!1 &578581694
 GameObject:
   m_ObjectHideFlags: 0
@@ -64657,7 +64671,7 @@ PrefabInstance:
     - target: {fileID: 7914757359012807234, guid: aaf01d5a231395d4fab8fdcec9e71db6,
         type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7914757359012807234, guid: aaf01d5a231395d4fab8fdcec9e71db6,
         type: 3}
@@ -64854,7 +64868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815246897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.1, y: 12.3, z: -0.1}
+  m_LocalPosition: {x: -1.67, y: 7.33, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 285127621}
@@ -65006,6 +65020,7 @@ GameObject:
   - component: {fileID: 854863145}
   - component: {fileID: 854863147}
   - component: {fileID: 854863146}
+  - component: {fileID: 854863148}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -65103,6 +65118,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &854863148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854863144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033dac377089ce64795284c5d4ecdf95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlueEnemy1GameObject: {fileID: 1049038169}
+  BlueEnemy2GameObject: {fileID: 2056632481}
+  BlueEnemy3GameObject: {fileID: 2090094116}
 --- !u!1 &870931511
 GameObject:
   m_ObjectHideFlags: 0
@@ -65628,6 +65658,12 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 5
   shootingCooldown: 1
+--- !u!1 &1049038169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1102902285265497534, guid: aaf01d5a231395d4fab8fdcec9e71db6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1102902284262873648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1062422769
 GameObject:
   m_ObjectHideFlags: 0
@@ -83095,6 +83131,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Thrust: 5
   KnockTime: 0.2
+--- !u!1 &2056632481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1102902285265497534, guid: aaf01d5a231395d4fab8fdcec9e71db6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1186036504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2090094116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1102902285265497534, guid: aaf01d5a231395d4fab8fdcec9e71db6,
+    type: 3}
+  m_PrefabInstance: {fileID: 678285842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1102902284262873648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83166,6 +83214,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseFullKinematicContacts
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914757359012807234, guid: aaf01d5a231395d4fab8fdcec9e71db6,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf01d5a231395d4fab8fdcec9e71db6, type: 3}

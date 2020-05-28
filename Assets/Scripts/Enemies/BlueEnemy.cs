@@ -11,12 +11,7 @@ public class BlueEnemy : MonoBehaviour, IEnemy
 
     [Header("Attributes")]
     private int lives = 1;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    private bool isDead = false;
 
     // Update is called once per frame
     void Update()
@@ -45,6 +40,7 @@ public class BlueEnemy : MonoBehaviour, IEnemy
 
     public void Die()
     {
+        isDead = true;
         Destroy(this.gameObject);
     }
 
@@ -75,6 +71,18 @@ public class BlueEnemy : MonoBehaviour, IEnemy
         set
         {
             isMoving = value;
+        }
+    }
+
+    public bool IsDead
+    {
+        get
+        {
+            return isDead;
+        }
+        set
+        {
+            isDead = value;
         }
     }
 
