@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LivesIndicator : MonoBehaviour
 {
+
+    public GameObject[] hearts;
     // Start is called before the first frame update
     void Start()
     {

@@ -507,6 +507,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69656ab5d5828ea42b441e1481c8b3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 1453060446}
+  - {fileID: 2086502295}
+  - {fileID: 264871184}
 --- !u!1 &338323336
 GameObject:
   m_ObjectHideFlags: 0
@@ -65118,6 +65122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69656ab5d5828ea42b441e1481c8b3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearts: []
 --- !u!1 &815246897
 GameObject:
   m_ObjectHideFlags: 0
@@ -65135,7 +65140,7 @@ GameObject:
   - component: {fileID: 815246903}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65220,9 +65225,9 @@ Rigidbody2D:
   m_GameObject: {fileID: 815246897}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -65302,6 +65307,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthIndicator: {fileID: 292234595}
+  Thrust: 10
+  KnockTime: 0.2
 --- !u!1 &854863144
 GameObject:
   m_ObjectHideFlags: 0

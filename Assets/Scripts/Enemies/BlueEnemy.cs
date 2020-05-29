@@ -47,7 +47,7 @@ public class BlueEnemy : MonoBehaviour, IEnemy
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("wall"))
+        if (collision.collider.CompareTag("wall") || collision.collider.CompareTag("Player"))
         {
             moveRight = !moveRight;
         }
@@ -57,11 +57,23 @@ public class BlueEnemy : MonoBehaviour, IEnemy
     {
         if (collider.CompareTag("weapon"))
         {
-            Debug.Log("AUCH");
+            // moveRight = !moveRight;
         }
     }
 
     #region Properties
+    public bool MoveRight 
+    {
+        get
+        {
+            return moveRight;
+        }
+        set
+        {
+            moveRight = value;
+        }
+    }
+
     public bool IsMoving
     {
         get

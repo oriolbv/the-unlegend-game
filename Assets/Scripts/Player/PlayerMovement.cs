@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D rb;
     private Animator animator;
+    private Player player;
 
     [Header("Movement")]
     Vector2 movement;
