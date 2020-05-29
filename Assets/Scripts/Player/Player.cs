@@ -5,17 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    public GameObject HealthIndicator;
     private int lives = 3;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHealthIndicator()
     {
-        
+
     }
 
     #region Properties
