@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionsSingleton : MonoBehaviour
+public class OptionsSingleton : Singleton<OptionsSingleton>
 {
-    // Start is called before the first frame update
-    void Start()
+    private float musicLevel = 1;
+    private float effectsLevel = 1;
+
+    #region Properties
+    public float MusicLevel
     {
-        
+        get
+        {
+            return musicLevel;
+        }
+        set
+        {
+            musicLevel = value;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public float EffectsLevel
     {
-        
+        get
+        {
+            return effectsLevel;
+        }
+        set
+        {
+            effectsLevel = value;
+        }
     }
+    #endregion
 }

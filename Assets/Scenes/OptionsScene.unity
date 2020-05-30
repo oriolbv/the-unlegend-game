@@ -2004,6 +2004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dc8e860f3427043abd6415857d77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicLevelSlider: {fileID: 1350485007}
+  EffectsLevelSlider: {fileID: 865109435}
   EnterAudioClip: {fileID: 8300000, guid: 0d8ca87a04fb9c54599c05cbb171ec27, type: 3}
   ExitAudioClip: {fileID: 8300000, guid: bcf886a6887e933408110ba5c3fc747f, type: 3}
 --- !u!82 &1423330456

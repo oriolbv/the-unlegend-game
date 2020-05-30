@@ -14,6 +14,7 @@ public class Menu : ExtendedBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = OptionsSingleton.Instance.EffectsLevel;
     }
 
     public void StartGame()
