@@ -17,6 +17,4 @@ public class Options : MonoBehaviour
         // Go back to Menu
         SceneManager.LoadScene("MenuScene");
     }
-
-
 }
