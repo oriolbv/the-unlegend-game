@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : ExtendedBehaviour
 {
 
-    public GameObject HealthIndicator;
+    public GameObject LivesIndicator;
     private int lives = 3;
     private bool isDead = false;
 
@@ -20,15 +20,16 @@ public class Player : ExtendedBehaviour
         rb = this.GetComponentInChildren<Rigidbody2D>();
     }
 
-    public void UpdateHealthIndicator()
+    public void UpdateLivesIndicator()
     {
-
+        LivesIndicator.GetComponent<LivesIndicator>().UpdateLivesIndicator(lives);
     }
 
     private void Hurt() 
     {
         Debug.Log("Hurt!");
         --lives;
+        UpdateLivesIndicator();
         if (lives <= 0)
         {
             Die();
