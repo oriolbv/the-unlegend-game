@@ -3,11 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Options : MonoBehaviour
+public class Options : ExtendedBehaviour
 {
+    public AudioClip EnterAudioClip;
+    public AudioClip ExitAudioClip;
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void GoBackToMenu()
     {
-        SceneManager.LoadScene("MenuScene");
+        audioSource.clip = ExitAudioClip;
+        audioSource.Play();
+        Wait(0.8f, () =>
+        {
+            SceneManager.LoadScene("MenuScene");
+        });
     }
 
     public void ApplyChanges()
@@ -15,6 +29,11 @@ public class Options : MonoBehaviour
         // Store changed settings into OptionsSingleton
 
         // Go back to Menu
-        SceneManager.LoadScene("MenuScene");
+        audioSource.clip = EnterAudioClip;
+        audioSource.Play();
+        Wait(0.8f, () =>
+        {
+            SceneManager.LoadScene("MenuScene");
+        });
     }
 }

@@ -3,10 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Title : MonoBehaviour
+public class Title : ExtendedBehaviour
 {
+    public AudioClip EnterAudioClip;
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void GoToGameMenu()
     {
-        SceneManager.LoadScene("MenuScene");
+        audioSource.clip = EnterAudioClip;
+        audioSource.Play();
+        Wait(0.8f, () =>
+        {
+            SceneManager.LoadScene("MenuScene");
+        });
     }
 }

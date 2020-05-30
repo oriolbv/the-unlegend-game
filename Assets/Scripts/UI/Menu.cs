@@ -3,25 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class Menu : ExtendedBehaviour
 {
+
+    public AudioClip EnterAudioClip;
+    public AudioClip ExitAudioClip;
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void StartGame()
     {
-        SceneManager.LoadScene("DungeonScene");
+        audioSource.clip = EnterAudioClip;
+        audioSource.Play();
+        Wait(0.8f, () =>
+        {
+            SceneManager.LoadScene("DungeonScene");
+        });
     }
 
     public void GoToOptions()
     {
-        SceneManager.LoadScene("OptionsScene");
+        audioSource.clip = EnterAudioClip;
+        audioSource.Play();
+        Wait(0.8f, () =>
+        {
+            SceneManager.LoadScene("OptionsScene");
+        });
     }
 
     public void GoToCredits()
     {
-        SceneManager.LoadScene("CreditsScene");
+        audioSource.clip = EnterAudioClip;
+        audioSource.Play();
+        Wait(0.8f, () =>
+        {
+            SceneManager.LoadScene("CreditsScene");
+        });
     }
 
     public void ExitGame()
     {
-        Application.Quit();
+        audioSource.clip = ExitAudioClip;
+        audioSource.Play();
+        Wait(0.8f, () =>
+        {
+            Application.Quit();
+        });
     }
 }
