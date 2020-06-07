@@ -16,9 +16,14 @@ public class Player : ExtendedBehaviour
     [Header("Components")]
     private Rigidbody2D rb;
 
+    public ChatBubble chatBubble;
+
     void Start() 
     {
         rb = this.GetComponentInChildren<Rigidbody2D>();
+
+        chatBubble.Create(chatBubble, this.transform, this.transform.localPosition, "EI TIOOO QUE DIUS?");
+
     }
 
     public void UpdateLivesIndicator()
