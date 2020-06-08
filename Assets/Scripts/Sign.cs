@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sign : MonoBehaviour
+public class Sign : ExtendedBehaviour
 {
-    public ChatBubble chatBubble;
+    public ChatBubble ChatBubble;
+    public string Text;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
-            chatBubble.Create(chatBubble, this.transform, this.transform.localPosition, "EI TIOOO QUE DIUS?");
+            ChatBubble.Create(ChatBubble, this.transform, this.transform.localPosition, Text);
+            Wait(4f, () => {
+                Destroy(ChatBubble.transform);
+            });
+            
         }
     }
 }

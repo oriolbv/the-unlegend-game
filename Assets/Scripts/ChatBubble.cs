@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ChatBubble : MonoBehaviour
+public class ChatBubble : ExtendedBehaviour
 {
     private SpriteRenderer backgroundSpriteRenderer;
     private TextMeshPro textMeshPro;
@@ -14,10 +14,6 @@ public class ChatBubble : MonoBehaviour
         backgroundSpriteRenderer = transform.Find("Background").GetComponent<SpriteRenderer>();
         textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
         Debug.Log("Holi");
-    }
-
-    private void Start()
-    {
     }
 
     private void Setup(string text)
@@ -34,9 +30,14 @@ public class ChatBubble : MonoBehaviour
 
     public void Create(ChatBubble chatBubble, Transform parent, Vector3 localPosition, string text)
     {
-        Transform chatBubbleTransform = Instantiate(chatBubble.transform, parent);
+        Transform chatBubbleTransform = Instantiate(chatBubble.transform, parent, true);
         chatBubbleTransform.localPosition = localPosition + new Vector3(8f, -2f);
         chatBubbleTransform.GetComponent<ChatBubble>().Setup(text);
+
+        Wait(2f, () => {
+            chatBubbleTransform.gameObject.SetActive(false);
+        });
+        
     }
 
 
