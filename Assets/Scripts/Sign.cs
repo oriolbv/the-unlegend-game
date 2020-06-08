@@ -12,10 +12,6 @@ public class Sign : ExtendedBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             ChatBubble.Create(ChatBubble, this.transform, this.transform.localPosition, Text);
-            Wait(4f, () => {
-                Destroy(ChatBubble.transform);
-            });
-            
         }
     }
 }

@@ -13,7 +13,6 @@ public class ChatBubble : ExtendedBehaviour
     {
         backgroundSpriteRenderer = transform.Find("Background").GetComponent<SpriteRenderer>();
         textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
-        Debug.Log("Holi");
     }
 
     private void Setup(string text)
@@ -34,8 +33,8 @@ public class ChatBubble : ExtendedBehaviour
         chatBubbleTransform.localPosition = localPosition + new Vector3(8f, -2f);
         chatBubbleTransform.GetComponent<ChatBubble>().Setup(text);
 
-        Wait(2f, () => {
-            chatBubbleTransform.gameObject.SetActive(false);
+        Wait(3f, () => {
+            Destroy(chatBubbleTransform.gameObject);
         });
         
     }
