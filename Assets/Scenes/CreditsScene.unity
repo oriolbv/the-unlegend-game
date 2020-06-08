@@ -379,8 +379,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1075191171}
+  - component: {fileID: 1075191172}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -407,6 +408,25 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -422}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1075191172
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075191170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1df10be26fd9ad4193e64f6bc4b3d69, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1511946375
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +439,7 @@ GameObject:
   - component: {fileID: 1511946378}
   - component: {fileID: 1511946377}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: NamesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,8 +461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 130.34998, y: -189.90001}
-  m_SizeDelta: {x: 260.7, y: 409.6}
+  m_AnchoredPosition: {x: 130.34998, y: -228.50002}
+  m_SizeDelta: {x: 260.7, y: 486.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1511946377
 MonoBehaviour:
@@ -490,7 +510,13 @@ MonoBehaviour:
     Oriol Burgaya
 
 
-'
+
+    Oriol
+    Burgaya
+
+
+
+    Jordi Duch'
 --- !u!222 &1511946378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -511,7 +537,7 @@ GameObject:
   - component: {fileID: 1993331915}
   - component: {fileID: 1993331914}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +607,7 @@ GameObject:
   - component: {fileID: 2075029450}
   - component: {fileID: 2075029449}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TitlesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,8 +629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130.4, y: -189.9}
-  m_SizeDelta: {x: 260.7, y: 409.6}
+  m_AnchoredPosition: {x: -130.4, y: -228.5}
+  m_SizeDelta: {x: 260.7, y: 486.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075029449
 MonoBehaviour:
@@ -641,6 +667,10 @@ MonoBehaviour:
 
 
 
+    Designer 2D
+
+
+
     Animator
 
 
@@ -651,6 +681,10 @@ MonoBehaviour:
 
     Tester
 
+
+
+    Special
+    Thanks
 
 '
 --- !u!222 &2075029450
