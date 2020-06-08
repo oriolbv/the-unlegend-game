@@ -35,7 +35,7 @@ public class ChatBubble : MonoBehaviour
     public void Create(ChatBubble chatBubble, Transform parent, Vector3 localPosition, string text)
     {
         Transform chatBubbleTransform = Instantiate(chatBubble.transform, parent);
-        chatBubbleTransform.localPosition = localPosition + new Vector3(29f, -5f);
+        chatBubbleTransform.localPosition = localPosition + new Vector3(8f, -2f);
         chatBubbleTransform.GetComponent<ChatBubble>().Setup(text);
     }
 

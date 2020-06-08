@@ -65312,6 +65312,8 @@ MonoBehaviour:
   LivesIndicator: {fileID: 292234595}
   Thrust: 0
   KnockTime: 0
+  chatBubble: {fileID: 8700669721504118948, guid: 94bf8cdc3ed26af4d86a419051b79cdc,
+    type: 3}
 --- !u!1 &854863144
 GameObject:
   m_ObjectHideFlags: 0
