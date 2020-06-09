@@ -13,7 +13,17 @@ public class BlueEnemy : MonoBehaviour, IEnemy
     private int lives = 1;
     private bool isDead = false;
 
-    // Update is called once per frame
+    [Header("Sound Effects")]
+    private AudioSource audioSource;
+
+    public AudioClip HurtAudioClip;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = OptionsSingleton.Instance.EffectsLevel;
+    }
+
     void Update()
     {
         if (isMoving)
@@ -41,9 +51,14 @@ public class BlueEnemy : MonoBehaviour, IEnemy
     public void Die()
     {
         isDead = true;
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 0.2f);
     }
 
+    public void ReproduceHurtSoundEffect() 
+    {
+        audioSource.clip = HurtAudioClip;
+        audioSource.Play();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

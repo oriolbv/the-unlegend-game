@@ -30,12 +30,14 @@ public class Knockback : ExtendedBehaviour
                     {
                         other.GetComponent<BlueEnemy>().IsMoving = false;
                         isBossEnemy = false;
+                        other.GetComponent<BlueEnemy>().ReproduceHurtSoundEffect();
                     }
                     
                     Vector2 forceDirection = rbEnemy.transform.position - transform.position;
                     Vector2 force = forceDirection.normalized * Thrust;
 
                     rbEnemy.velocity = force;
+                    
                     Wait(0.2f, () => {
                         rbEnemy.velocity = new Vector2();
                         if (isBossEnemy)

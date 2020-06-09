@@ -66,7 +66,8 @@ public class Player : ExtendedBehaviour
                 rb.velocity = force;
 
                 // Reproduce sound effect
-                
+                audioSource.clip = HurtAudioClip;
+                audioSource.Play();
 
                 Wait(0.5f, () => {
                         rb.velocity = new Vector2();

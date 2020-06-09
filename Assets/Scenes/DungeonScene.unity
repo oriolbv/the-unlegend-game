@@ -65425,7 +65425,7 @@ MonoBehaviour:
   Thrust: 0
   KnockTime: 0
   SwordAudioClip: {fileID: 8300000, guid: f66485b973e78864da94ebd46f4d9e3f, type: 3}
-  HurtAudioClip: {fileID: 0}
+  HurtAudioClip: {fileID: 8300000, guid: d1aafaa1939d0c54a8567c5c111540d9, type: 3}
 --- !u!82 &815246905
 AudioSource:
   m_ObjectHideFlags: 0
