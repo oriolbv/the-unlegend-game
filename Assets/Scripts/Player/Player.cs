@@ -16,9 +16,18 @@ public class Player : ExtendedBehaviour
     [Header("Components")]
     private Rigidbody2D rb;
 
+    [Header("Sound Effects")]
+    private AudioSource audioSource;
+
+    public AudioClip SwordAudioClip;
+    public AudioClip HurtAudioClip;
+
     void Start() 
     {
         rb = this.GetComponentInChildren<Rigidbody2D>();
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = OptionsSingleton.Instance.EffectsLevel;
     }
 
     public void UpdateLivesIndicator()
@@ -51,11 +60,15 @@ public class Player : ExtendedBehaviour
             Debug.Log("DOUUUUUUUUUUUUUUUUUUUUCH!!!");
             if (rb != null)
             {
-                    Vector2 forceDirection = rb.transform.position - transform.position;
-                    Vector2 force = forceDirection.normalized * Thrust;
+                Vector2 forceDirection = rb.transform.position - transform.position;
+                Vector2 force = forceDirection.normalized * Thrust;
 
-                    rb.velocity = force;
-                    Wait(0.5f, () => {
+                rb.velocity = force;
+
+                // Reproduce sound effect
+                
+
+                Wait(0.5f, () => {
                         rb.velocity = new Vector2();
                         Hurt();
                     });
@@ -63,7 +76,11 @@ public class Player : ExtendedBehaviour
         }
     }
 
-
+    public void ReproduceSwordSoundEffect()
+    {
+        audioSource.clip = SwordAudioClip;
+        audioSource.Play();
+    }
 
     #region Properties
 

@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = this.GetComponentInChildren<Rigidbody2D>();
         animator = this.GetComponentInChildren<Animator>();
+        player = this.GetComponentInChildren<Player>();
     }
     
     void Update()
@@ -50,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Attack()
     {
         animator.SetBool("is_attacking", true);
+        // Reproduce sound
+        player.ReproduceSwordSoundEffect();
         yield return null;
         animator.SetBool("is_attacking", false);
         yield return new WaitForSeconds(.40f); 
