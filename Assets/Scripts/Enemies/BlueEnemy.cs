@@ -72,7 +72,9 @@ public class BlueEnemy : MonoBehaviour, IEnemy
     {
         if (collider.CompareTag("weapon"))
         {
-            // moveRight = !moveRight;
+            Debug.Log("WEAPON BRO");
+            Vector2 difference = transform.position - collider.transform.position;
+            transform.position = new Vector2(transform.position.x + 2f, transform.position.y +2f);
         }
     }
 

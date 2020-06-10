@@ -11,7 +11,6 @@ public class Room1DoorState : ExtendedBehaviour
 
     [Header("Sound Effects")]
     private AudioSource audioSource;
-
     public AudioClip DoorOpenAudioClip;
 
     void Start()

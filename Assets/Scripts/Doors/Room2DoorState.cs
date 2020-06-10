@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Room2DoorState : MonoBehaviour
+public class Room2DoorState : ExtendedBehaviour
 {
     public GameObject BlueEnemy1GameObject;
     public GameObject BlueEnemy2GameObject;
@@ -12,8 +12,20 @@ public class Room2DoorState : MonoBehaviour
     private bool blueEnemy2Dead;
     private bool blueEnemy3Dead;
 
+    private bool doorOpened;
 
-    // Update is called once per frame
+    [Header("Sound Effects")]
+    private AudioSource audioSource;
+    public AudioClip DoorOpenAudioClip;
+
+    private void Start()
+    {
+        doorOpened = false;
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = OptionsSingleton.Instance.EffectsLevel;
+        audioSource.clip = DoorOpenAudioClip;
+    }
     void Update()
     {
         // Getting FloorButton instances
@@ -22,10 +34,15 @@ public class Room2DoorState : MonoBehaviour
         blueEnemy3Dead = BlueEnemy3GameObject == null ? true : false;
 
         // Check if all floor buttons are pressed by the different boxes placed in the room
-        if (blueEnemy1Dead && blueEnemy2Dead && blueEnemy3Dead)
+        if (blueEnemy1Dead && blueEnemy2Dead && blueEnemy3Dead && !doorOpened)
         {
-            // Desactivate gameobject in order to open the door
-            this.gameObject.SetActive(false);
+            doorOpened = true;
+            audioSource.Play();
+            Wait(1.4f, () =>
+            {
+                // Desactivate gameobject in order to open the door
+                this.gameObject.SetActive(false);
+            });
         }
     }
 }
