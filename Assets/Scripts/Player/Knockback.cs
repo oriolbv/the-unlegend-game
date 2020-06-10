@@ -11,48 +11,49 @@ public class Knockback : ExtendedBehaviour
 
     private bool isBossEnemy = false;
 
-    //private void OnTriggerEnter2D(Collider2D other) 
-    //{
-    //    if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("boss")) 
-    //    {
-    //        if(!triggerActive)
-    //        {
-    //            triggerActive = true;
-    //            Rigidbody2D rbEnemy = other.GetComponent<Rigidbody2D>();
-    //            if (rbEnemy != null)
-    //            {
-    //                if (other.gameObject.CompareTag("boss"))
-    //                {
-    //                    other.GetComponent<BossEnemy>().IsMoving = false;
-    //                    isBossEnemy = true;
-    //                }
-    //                else
-    //                {
-    //                    other.GetComponent<BlueEnemy>().IsMoving = false;
-    //                    isBossEnemy = false;
-    //                    other.GetComponent<BlueEnemy>().ReproduceHurtSoundEffect();
-    //                }
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+       if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("boss")) 
+       {
+           if(!triggerActive)
+           {
+               triggerActive = true;
+               Rigidbody2D rbEnemy = other.GetComponent<Rigidbody2D>();
+               if (rbEnemy != null)
+               {
+                   if (other.gameObject.CompareTag("boss"))
+                   {
+                       other.GetComponent<BossEnemy>().IsMoving = false;
+                       isBossEnemy = true;
+                   }
+                   else
+                   {
+                        other.GetComponent<BlueEnemy>().IsMoving = false;
+                        isBossEnemy = false;
+                        other.GetComponent<BlueEnemy>().ReproduceHurtSoundEffect();
+                   }
                     
-    //                Vector2 forceDirection = rbEnemy.transform.position - transform.position;
-    //                Vector2 force = forceDirection.normalized * Thrust;
+                //    Vector2 forceDirection = rbEnemy.transform.position - transform.position;
+                //    Vector2 force = forceDirection.normalized * Thrust;
 
-    //                rbEnemy.velocity = force;
+                //    rbEnemy.velocity = force;
+                    rbEnemy.AddForce(transform.up * 500 + transform.right * 500);
                     
-    //                Wait(0.2f, () => {
-    //                    rbEnemy.velocity = new Vector2();
-    //                    if (isBossEnemy)
-    //                    {
-    //                        other.GetComponent<BossEnemy>().Hurt();
-    //                    }
-    //                    else
-    //                    {
-    //                        other.GetComponent<BlueEnemy>().Hurt();
-    //                    }
+                   Wait(0.2f, () => {
+                       rbEnemy.velocity = new Vector2();
+                       if (isBossEnemy)
+                       {
+                           other.GetComponent<BossEnemy>().Hurt();
+                       }
+                       else
+                       {
+                           other.GetComponent<BlueEnemy>().Hurt();
+                       }
                         
-    //                    triggerActive = false;
-    //                });
-    //            }
-    //        }
-    //    }
-    //}
+                       triggerActive = false;
+                   });
+               }
+           }
+       }
+    }
 }

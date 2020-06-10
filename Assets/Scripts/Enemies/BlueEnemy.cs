@@ -41,6 +41,7 @@ public class BlueEnemy : MonoBehaviour, IEnemy
 
     public void Hurt()
     {
+        Debug.Log("Hurt!");
         --lives;
         if (lives <= 0)
         {
@@ -50,6 +51,7 @@ public class BlueEnemy : MonoBehaviour, IEnemy
 
     public void Die()
     {
+        Debug.Log("Die!");
         isDead = true;
         Destroy(this.gameObject, 0.2f);
     }
@@ -68,15 +70,15 @@ public class BlueEnemy : MonoBehaviour, IEnemy
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.CompareTag("weapon"))
-        {
-            Debug.Log("WEAPON BRO");
-            Vector2 difference = transform.position - collider.transform.position;
-            transform.position = new Vector2(transform.position.x + 2f, transform.position.y +2f);
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D collider)
+    // {
+    //     if (collider.CompareTag("weapon"))
+    //     {
+    //         Debug.Log("WEAPON BRO");
+    //         Vector2 difference = transform.position - collider.transform.position;
+    //         transform.position = new Vector2(transform.position.x + 2f, transform.position.y +2f);
+    //     }
+    // }
 
     #region Properties
     public bool MoveRight 

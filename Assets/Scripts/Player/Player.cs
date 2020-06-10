@@ -37,7 +37,6 @@ public class Player : ExtendedBehaviour
 
     private void Hurt() 
     {
-        Debug.Log("Hurt!");
         --lives;
         UpdateLivesIndicator();
         if (lives <= 0)
