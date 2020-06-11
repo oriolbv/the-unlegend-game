@@ -56,7 +56,6 @@ public class Player : ExtendedBehaviour
     {
         if (collision.collider.CompareTag("enemy"))
         {
-            Debug.Log("DOUUUUUUUUUUUUUUUUUUUUCH!!!");
             if (rb != null)
             {
                 Vector2 forceDirection = rb.transform.position - transform.position;
@@ -73,6 +72,19 @@ public class Player : ExtendedBehaviour
                         Hurt();
                     });
             }
+        } 
+        else if (collision.collider.CompareTag("bullet"))
+        {
+            // Reproduce sound effect
+            audioSource.clip = HurtAudioClip;
+            audioSource.Play();
+
+            Destroy(collision.collider.gameObject);
+
+            Wait(0.5f, () => {
+                rb.velocity = new Vector2();
+                Hurt();
+            });
         }
     }
 

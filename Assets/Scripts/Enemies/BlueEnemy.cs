@@ -15,7 +15,6 @@ public class BlueEnemy : MonoBehaviour, IEnemy
 
     [Header("Sound Effects")]
     private AudioSource audioSource;
-
     public AudioClip HurtAudioClip;
 
     void Start()

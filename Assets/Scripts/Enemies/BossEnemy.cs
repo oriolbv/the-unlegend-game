@@ -16,10 +16,21 @@ public class BossEnemy : MonoBehaviour, IEnemy
     public float shootingCooldown;
     private float shootingTimer;
 
+    [Header("Sound Effects")]
+    private AudioSource audioSource;
+    public AudioClip HurtAudioClip;
+
+    [Header("Attributes")]
+    private int lives = 3;
+    private bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
         shootingTimer = shootingCooldown;
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = OptionsSingleton.Instance.EffectsLevel;
     }
 
     // Update is called once per frame
@@ -51,6 +62,12 @@ public class BossEnemy : MonoBehaviour, IEnemy
 
     }
 
+    public void ReproduceHurtSoundEffect()
+    {
+        audioSource.clip = HurtAudioClip;
+        audioSource.Play();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("wall"))
@@ -61,13 +78,20 @@ public class BossEnemy : MonoBehaviour, IEnemy
 
     public void Hurt()
     {
+        Debug.Log("Hurt!");
+        --lives;
         isMoving = true;
-        //throw new System.NotImplementedException();
+        if (lives <= 0)
+        {
+            Die();
+        }
     }
 
     public void Die()
     {
-        //throw new System.NotImplementedException();
+        Debug.Log("Die!");
+        isDead = true;
+        Destroy(this.gameObject, 0.2f);
     }
 
     #region Properties
