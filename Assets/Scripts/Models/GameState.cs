@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameState : Singleton<GameState>
 {
+    private bool _isGameStarted;
+    private bool _isBossBattleStarted;
     private bool _isFinished;
 
     public GameState()
@@ -12,10 +14,38 @@ public class GameState : Singleton<GameState>
 
     public void initGameScore()
     {
+        _isGameStarted = false;
         _isFinished = false;
+        _isBossBattleStarted = false;
     }
 
     // Properties
+
+    public bool IsGameStarted
+    {
+        get
+        {
+            return _isGameStarted;
+        }
+        set
+        {
+            _isGameStarted = value;
+        }
+    }
+
+    public bool IsBossBattleStarted
+    {
+        get
+        {
+            return _isBossBattleStarted;
+        }
+        set
+        {
+            _isBossBattleStarted = value;
+        }
+    }
+
+
     public bool IsFinished
     {
         get

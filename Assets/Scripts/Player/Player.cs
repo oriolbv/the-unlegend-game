@@ -88,6 +88,18 @@ public class Player : ExtendedBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("boss_battle"))
+        {
+            GameState.Instance.IsBossBattleStarted = true;
+        }
+        else if (other.gameObject.CompareTag("Finish"))
+        {
+            GameState.Instance.IsFinished = true;
+        }
+    }
+
     public void ReproduceSwordSoundEffect()
     {
         audioSource.clip = SwordAudioClip;

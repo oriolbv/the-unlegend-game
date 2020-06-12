@@ -11,6 +11,7 @@ TagManager:
   - bullet
   - boss
   - heart
+  - boss_battle
   layers:
   - Default
   - TransparentFX
