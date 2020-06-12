@@ -66145,6 +66145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be86fc62fb3d6d2408a3ea8b6ba7b067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainMusicAudioClip: {fileID: 8300000, guid: c3ebe066d58e66043964cfbb46aa5fcb, type: 3}
+  BossMusicAudioClip: {fileID: 8300000, guid: 75d113225f631454ba145c9bf4759001, type: 3}
 --- !u!4 &877149347
 Transform:
   m_ObjectHideFlags: 0
@@ -66173,7 +66175,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
