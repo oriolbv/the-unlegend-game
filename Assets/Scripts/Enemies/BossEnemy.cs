@@ -24,6 +24,9 @@ public class BossEnemy : MonoBehaviour, IEnemy
     private int lives = 3;
     private bool isDead = false;
 
+    [Header("Particle Systems")]
+    public ParticleSystem DeadExplosionParticleSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +94,10 @@ public class BossEnemy : MonoBehaviour, IEnemy
     {
         Debug.Log("Die!");
         isDead = true;
-        Destroy(this.gameObject, 0.2f);
+
+        DeadExplosionParticleSystem.Play();
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        Destroy(this.gameObject, 2f);
     }
 
     #region Properties
