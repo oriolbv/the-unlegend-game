@@ -45,9 +45,7 @@ public class GameplayManager : ExtendedBehaviour
             Wait(2f, () => {
                 SceneManager.LoadScene("CreditsScene");
             });
-
         }
-
     }
 
     public void ReproduceMainMusic()
