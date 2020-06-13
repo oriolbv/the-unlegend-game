@@ -35,7 +35,7 @@ public class Player : ExtendedBehaviour
         LivesIndicator.GetComponent<LivesIndicator>().UpdateLivesIndicator(lives);
     }
 
-    private void Hurt() 
+    public void Hurt() 
     {
         --lives;
         UpdateLivesIndicator();
@@ -54,7 +54,7 @@ public class Player : ExtendedBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("enemy"))
+        if (collision.collider.CompareTag("enemy") || collision.collider.CompareTag("boss"))
         {
             if (rb != null)
             {
@@ -63,9 +63,7 @@ public class Player : ExtendedBehaviour
 
                 rb.velocity = force;
 
-                // Reproduce sound effect
-                audioSource.clip = HurtAudioClip;
-                audioSource.Play();
+                
 
                 Wait(0.5f, () => {
                         rb.velocity = new Vector2();
@@ -73,21 +71,8 @@ public class Player : ExtendedBehaviour
                     });
             }
         } 
-        else if (collision.collider.CompareTag("bullet"))
-        {
-            // Reproduce sound effect
-            audioSource.clip = HurtAudioClip;
-            audioSource.Play();
-
-            Destroy(collision.collider.gameObject);
-
-            Wait(0.5f, () => {
-                rb.velocity = new Vector2();
-                Hurt();
-            });
-        }
+        
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("boss_battle"))
@@ -97,6 +82,19 @@ public class Player : ExtendedBehaviour
         else if (other.gameObject.CompareTag("Finish"))
         {
             GameState.Instance.IsFinished = true;
+        }
+        else if (other.gameObject.CompareTag("bullet"))
+        {
+            // Reproduce sound effect
+            audioSource.clip = HurtAudioClip;
+            audioSource.Play();
+
+            Destroy(other.gameObject);
+
+            Wait(0.5f, () => {
+                rb.velocity = new Vector2();
+                Hurt();
+            });
         }
     }
 

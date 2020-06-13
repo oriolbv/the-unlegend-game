@@ -38,9 +38,8 @@ public class Knockback : ExtendedBehaviour
                     Vector2 force = forceDirection.normalized * Thrust;
 
                     rbEnemy.velocity = force;
-                    //rbEnemy.AddForce(transform.up * 500 + transform.right * 500);
-                    
-                   Wait(0.2f, () => {
+
+                   Wait(0.1f, () => {
                        rbEnemy.velocity = new Vector2();
                        if (isBossEnemy)
                        {

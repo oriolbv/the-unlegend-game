@@ -51,18 +51,19 @@ public class BossEnemy : MonoBehaviour, IEnemy
             }
         }
 
-
-        shootingTimer -= Time.deltaTime;
-        if (shootingTimer <= 0)
+        if (!isDead)
         {
-            shootingTimer = shootingCooldown;
-            GameObject bulletInstance = Instantiate(bulletPrefab);
-            bulletInstance.transform.SetParent(transform.parent);
-            bulletInstance.transform.position = transform.position;
-            bulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -bulletSpeed);
-            Destroy(bulletInstance, 5f);
+            shootingTimer -= Time.deltaTime;
+            if (shootingTimer <= 0)
+            {
+                shootingTimer = shootingCooldown;
+                GameObject bulletInstance = Instantiate(bulletPrefab);
+                bulletInstance.transform.SetParent(transform.parent);
+                bulletInstance.transform.position = transform.position;
+                bulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -bulletSpeed);
+                Destroy(bulletInstance, 5f);
+            }
         }
-
     }
 
     public void ReproduceHurtSoundEffect()
@@ -94,8 +95,8 @@ public class BossEnemy : MonoBehaviour, IEnemy
     {
         Debug.Log("Die!");
         isDead = true;
-
         DeadExplosionParticleSystem.Play();
+        // Set sprite transparency in order to disappear but not destroy the object yet.
         this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
         Destroy(this.gameObject, 2f);
     }
