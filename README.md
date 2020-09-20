@@ -1,7 +1,7 @@
 # The Unlegend game
 The Unlegend is a top-down action RPG game developed using Unity3D motor.
 ## How to play
-You can play The Unlegend using W/A/S/D or direction arrwos to walk and SPACE to attack. 
+You can play The Unlegend using W/A/S/D or direction arrwos to walk through all the dungeon rooms and SPACE to attack with your sword. 
 
 
 ## Documentation
